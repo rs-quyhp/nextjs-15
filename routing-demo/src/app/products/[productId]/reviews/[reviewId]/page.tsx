@@ -1,5 +1,5 @@
-const getRandomInt = () => {
-  return Math.floor(Math.random() * 100);
+export const getRandomInt = () => {
+  return Math.floor(Math.random() * 2);
 };
 
 const ReviewPage = async ({
