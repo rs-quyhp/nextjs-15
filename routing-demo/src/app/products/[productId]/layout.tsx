@@ -1,8 +1,10 @@
-import { getRandomInt } from './reviews/[reviewId]/page';
-
 const ProductLayout = ({ children }: { children: React.ReactNode }) => {
+  const getRandomInt = () => {
+    return Math.floor(Math.random() * 2);
+  };
+
   if (getRandomInt() % 2 === 0) {
-    throw new Error('Error loading product');
+    throw new Error("Error loading product");
   }
 
   return (

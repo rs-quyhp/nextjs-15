@@ -1,12 +1,13 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
+import { ErrorWrapper } from "./error-wrapper";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | QuyHP',
-    default: 'QuyHP',
-    absolute: 'QuyHP',
+    template: "%s | QuyHP",
+    default: "QuyHP",
+    absolute: "QuyHP",
   },
-  description: 'QuyHP',
+  description: "QuyHP",
 };
 
 export default function RootLayout({
@@ -19,17 +20,17 @@ export default function RootLayout({
       <body>
         <header
           style={{
-            backgroundColor: 'lightblue',
-            padding: '1rem',
+            backgroundColor: "lightblue",
+            padding: "1rem",
           }}
         >
           <p>Header</p>
         </header>
-        {children}
+        <ErrorWrapper>{children}</ErrorWrapper>
         <footer
           style={{
-            backgroundColor: 'ghostwhite',
-            padding: '1rem',
+            backgroundColor: "ghostwhite",
+            padding: "1rem",
           }}
         >
           <p>Footer</p>
