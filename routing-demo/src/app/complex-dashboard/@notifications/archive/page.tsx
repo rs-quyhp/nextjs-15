@@ -5,8 +5,8 @@ const NotificationsPage = () => {
   return (
     <Card>
       <div>
-        <p>Notifications Page</p>
-        <Link href="/complex-dashboard/archive">Archive</Link>
+        <p>Archive Page</p>
+        <Link href="/complex-dashboard/">Default</Link>
       </div>
     </Card>
   );
