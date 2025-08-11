@@ -1,3 +1,5 @@
+export const dynamicParams = true;
+
 export const generateStaticParams = () => {
   return [{ id: '1' }, { id: '2' }, { id: '3' }];
 };
