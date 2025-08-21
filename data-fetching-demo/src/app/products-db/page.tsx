@@ -1,6 +1,6 @@
-import { getProduct, getProducts } from '@/prisma-db';
+import { getProducts } from '@/prisma-db';
 
-type Product = {
+export type Product = {
   id: number;
   title: string;
   price: number;
@@ -11,12 +11,15 @@ const ProductPage = async () => {
   const products: Product[] = await getProducts();
 
   return (
-    <ul>
+    <ul className="space-y-4 p-4">
       {products.map((product) => (
-        <li>
-          <h2>{product.title}</h2>
+        <li
+          key={product.id}
+          className="p-4 bg-white shadow-md rounded-lg -text-gray-700"
+        >
+          <h2 className="text-xl font-semibold">{product.title}</h2>
           <p>{product.description}</p>
-          <p>{product.price}</p>
+          <p className="text-lg font-medium">{product.price}</p>
         </li>
       ))}
     </ul>
