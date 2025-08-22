@@ -1,8 +1,9 @@
 'use server';
 
-import { addProduct, updateProduct } from '@/prisma-db';
+import { addProduct, deleteProduct, updateProduct } from '@/prisma-db';
 import { Errors, FormState } from '../products-db-create/page';
 import { redirect } from 'next/navigation';
+import { revalidatePath } from 'next/cache';
 
 export const createProduct = async (
   prevState: FormState,
@@ -45,4 +46,10 @@ export const editProduct = async (
   await updateProduct(id, title, Number(price), description);
 
   redirect('/products-db');
+};
+
+export const removeProduct = async (id: number) => {
+  await deleteProduct(id);
+
+  revalidatePath('/products-db');
 };
